@@ -1,0 +1,11 @@
+def can_jump(nums):
+    maxReach = 0
+    for i in range(len(nums)):
+        if i > maxReach:
+            return "false"
+        maxReach = max(maxReach, i + nums[i])
+    return "true"
+
+n = int(input())  
+nums = list(map(int, input().split()))  
+print(can_jump(nums))
