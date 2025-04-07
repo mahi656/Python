@@ -1,0 +1,12 @@
+def generate(index, path):
+    if index == len(weapons):
+        if path:
+            print(path)
+        return
+    generate(index + 1, path + [weapons[index]])
+    generate(index + 1, path)
+
+n = int(input())
+weapons = input().split()
+
+generate(0, [])
